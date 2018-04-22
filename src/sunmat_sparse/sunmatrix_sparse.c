@@ -574,8 +574,8 @@ int SUNMatScaleAddI_Sparse(realtype c, SUNMatrix A)
     }
   
     /* create work arrays for row indices and nonzero column values */
-    w = (sunindextype *) malloc(SM_ROWS_S(A) * sizeof(sunindextype));
-    x = (realtype *) malloc(SM_ROWS_S(A) * sizeof(realtype));
+    w = (sunindextype *) malloc(M * sizeof(sunindextype));
+    x = (realtype *) malloc(M * sizeof(realtype));
 
     /* create new matrix for sum (overestimate nnz as sum of each) */
     C = SUNSparseMatrix(SM_ROWS_S(A), SM_COLUMNS_S(A),
